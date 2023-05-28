@@ -1,11 +1,10 @@
-<p>servers works!</p>
-<app-server></app-server>
-<app-server></app-server>
+<input placeholder="write server name" type="text" (input)="onUpdateServerName($event)" />
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onClickAddServer()">
   Add Server
 </button>
-<p [innerText]="serverCreatedText"></p>
+<p *ngIf="serverCreatedStatus; else noServer" [innerText]="serverCreatedText"></p>
+<ng-template #noServer>
+  <p>No server created</p>
+</ng-template>
 
-<input placeholder="write server number" type="text" (input)="onUpdateServerName($event)" />
-<p>{{ serverName }}</p>
-
+<app-server></app-server>

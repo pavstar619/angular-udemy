@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreatedText = 'Server not created';
   serverName = '';
+  serverCreatedStatus = false;
 
   constructor() {
     setTimeout(() => {
@@ -19,6 +20,7 @@ export class ServersComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   onClickAddServer() {
+    this.serverCreatedStatus = true;
     this.serverCreatedText = "Server was created at " + this.serverName;
   }
 
