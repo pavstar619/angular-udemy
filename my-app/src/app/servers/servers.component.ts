@@ -10,19 +10,19 @@ export class ServersComponent implements OnInit {
   serverCreatedText = 'Server not created';
   serverName = '';
 
-  constructor(){
+  constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
-    },2000);
+    }, 2000);
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  onClickAddServer(){
-    this.serverCreatedText = "Server was created";
+  onClickAddServer() {
+    this.serverCreatedText = "Server was created at " + this.serverName;
   }
 
-  onUpdateServerName(event){
+  onUpdateServerName(event) {
     this.serverName = event.target.value;
   }
 

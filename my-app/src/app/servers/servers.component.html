@@ -1,14 +1,11 @@
 <p>servers works!</p>
 <app-server></app-server>
 <app-server></app-server>
-<button
-  class="btn btn-primary"
-  [disabled]="!allowNewServer"
-  (click)="onClickAddServer()"
->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onClickAddServer()">
   Add Server
 </button>
 <p [innerText]="serverCreatedText"></p>
 
-<input type="text" (input)="onUpdateServerName($event)" />
+<input placeholder="write server number" type="text" (input)="onUpdateServerName($event)" />
 <p>{{ serverName }}</p>
+
